@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "testdeploy"
+  labels:
+    app: "testpo"
+
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: testpo
+  template:
+     metadata:
+      labels:
+        app: testpo
+     spec:
+      containers:
+      - name: "testcon1"
+        image: "deepakdocker25/dockerapp"
+        
